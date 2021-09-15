@@ -8,12 +8,11 @@ module multi_tb();
 
 
     // outputs from the ALU are wire type
-    wire [4:0] res;
+    wire [9:0] res;
 
 
     // Tracking the number of errors
     integer errors;
-
 
     // Instantiate ALU
     multi test(a, b, res);
@@ -46,15 +45,55 @@ module multi_tb();
     task checkMulti;
         begin
             @(negedge clock);
-            assign a  = 5'b00010;
-            assign b= 5'b00000;
+            assign a  = 5'd20;
+            assign b= 5'd20;
 
             @(negedge clock);
-            if(res !== 10'b0000000000) begin
-                $display("**Error in AND (test 5); expected: %h, actual: %h", 10'b0000000000, res);
+            if(res !== 10'd400) begin
+                $display("**Error in AND (test 0); expected: %h, actual: %h", 10'd400, res);
                 errors = errors + 1;
             end
+				
+				@(negedge clock);
+            assign a  = 5'd31;
+            assign b= 5'd31;
 
+            @(negedge clock);
+            if(res !== 10'd961) begin
+                $display("**Error in AND (test 1); expected: %h, actual: %h", 10'd963, res);
+                errors = errors + 1;
+            end
+				
+				@(negedge clock);
+            assign a  = 5'd1;
+            assign b= 5'd0;
+
+            @(negedge clock);
+            if(res !== 10'd0) begin
+                $display("**Error in AND (test 2); expected: %h, actual: %h", 10'd0, res);
+                errors = errors + 1;
+            end
+				
+				@(negedge clock);
+            assign a  = 5'd0;
+            assign b= 5'd0;
+
+            @(negedge clock);
+            if(res !== 10'd0) begin
+                $display("**Error in AND (test 3); expected: %h, actual: %h", 10'd0, res);
+                errors = errors + 1;
+            end
+				
+				@(negedge clock);
+            assign a  = 5'd0;
+            assign b= 5'd1;
+
+            @(negedge clock);
+            if(res !== 10'd0) begin
+                $display("**Error in AND (test 4); expected: %h, actual: %h", 10'd0, res);
+                errors = errors + 1;
+            end
+				
            
         end
     endtask

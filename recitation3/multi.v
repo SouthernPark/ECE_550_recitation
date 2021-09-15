@@ -20,9 +20,9 @@ module multi(a, b, res);
 	//first layer
 	wire cout[26:1];
 	wire sum[20:1];
-	ha ha_0(multiply[1][1], multiply[0][1], sum[1], cout[1]);
+	ha ha_0(multiply[1][0], multiply[0][1], sum[1], cout[1]);
 	
-	fa fa_0(multiply[2][2], multiply[1][1], multiply[0][2], sum[2], cout[2]);
+	fa fa_0(multiply[2][0], multiply[1][1], multiply[0][2], sum[2], cout[2]);
 	fa fa_1(multiply[2][1], multiply[1][2], multiply[0][3], sum[3], cout[3]);
 	fa fa_2(multiply[2][2], multiply[1][3], multiply[0][4], sum[4], cout[4]);
 	fa fa_3(multiply[3][2], multiply[2][3], multiply[1][4], sum[5], cout[5]);
@@ -32,9 +32,9 @@ module multi(a, b, res);
 	
 	//second layer
 	assign res[1] = sum[1];
-	ha ha_2(sum[1], cout[1], sum[8], cout[8]);
-	fa fa_5(sum[3], cout[2], multiply[3][3], sum[9], cout[9]);
-	fa fa_6(cout[3], multiply[4][4], multiply[3][1], sum[10], cout[10]);
+	ha ha_2(sum[2], cout[1], sum[8], cout[8]);
+	fa fa_5(sum[3], cout[2], multiply[3][0], sum[9], cout[9]);
+	fa fa_6(cout[3], multiply[4][0], multiply[3][1], sum[10], cout[10]);
 	fa fa_7(sum[5], cout[4], multiply[4][1], sum[11], cout[11]);
 	
 	ha ha_3(sum[6], cout[5], sum[12], cout[12]);
@@ -46,7 +46,7 @@ module multi(a, b, res);
 	assign res[2] = sum[8];
 	ha ha_6(sum[9], cout[8], sum[15], cout[15]);
 	
-	fa fa_8(sum[10], sum[10], cout[9], sum[16], cout[16]);
+	fa fa_8(sum[10], sum[4], cout[9], sum[16], cout[16]);
 	
 	ha ha_7(sum[11], cout[10], sum[17], cout[17]);
 	ha ha_8(sum[12], cout[11], sum[18], cout[18]);
