@@ -1,6 +1,6 @@
 `timescale 1 ns / 100 ps
 
-module alu_tb();
+module multi_tb();
 
     // inputs to the ALU are reg type
     reg            clock;
