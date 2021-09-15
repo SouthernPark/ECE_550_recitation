@@ -1,2 +1,3 @@
 # ECE_550_recitation
-This repo is for the recitation of ECE550
+5*5 bits Wallace Tree Multipliers (WTM)
+
