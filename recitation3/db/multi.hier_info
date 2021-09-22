@@ -1,0 +1,325 @@
+|multi
+a[0] => digit_multiply_out[0].digit_multiply_end[0].digit_multi.IN0
+a[0] => digit_multiply_out[0].digit_multiply_end[1].digit_multi.IN0
+a[0] => digit_multiply_out[0].digit_multiply_end[2].digit_multi.IN0
+a[0] => digit_multiply_out[0].digit_multiply_end[3].digit_multi.IN0
+a[0] => digit_multiply_out[0].digit_multiply_end[4].digit_multi.IN0
+a[1] => digit_multiply_out[1].digit_multiply_end[0].digit_multi.IN0
+a[1] => digit_multiply_out[1].digit_multiply_end[1].digit_multi.IN0
+a[1] => digit_multiply_out[1].digit_multiply_end[2].digit_multi.IN0
+a[1] => digit_multiply_out[1].digit_multiply_end[3].digit_multi.IN0
+a[1] => digit_multiply_out[1].digit_multiply_end[4].digit_multi.IN0
+a[2] => digit_multiply_out[2].digit_multiply_end[0].digit_multi.IN0
+a[2] => digit_multiply_out[2].digit_multiply_end[1].digit_multi.IN0
+a[2] => digit_multiply_out[2].digit_multiply_end[2].digit_multi.IN0
+a[2] => digit_multiply_out[2].digit_multiply_end[3].digit_multi.IN0
+a[2] => digit_multiply_out[2].digit_multiply_end[4].digit_multi.IN0
+a[3] => digit_multiply_out[3].digit_multiply_end[0].digit_multi.IN0
+a[3] => digit_multiply_out[3].digit_multiply_end[1].digit_multi.IN0
+a[3] => digit_multiply_out[3].digit_multiply_end[2].digit_multi.IN0
+a[3] => digit_multiply_out[3].digit_multiply_end[3].digit_multi.IN0
+a[3] => digit_multiply_out[3].digit_multiply_end[4].digit_multi.IN0
+a[4] => digit_multiply_out[4].digit_multiply_end[0].digit_multi.IN0
+a[4] => digit_multiply_out[4].digit_multiply_end[1].digit_multi.IN0
+a[4] => digit_multiply_out[4].digit_multiply_end[2].digit_multi.IN0
+a[4] => digit_multiply_out[4].digit_multiply_end[3].digit_multi.IN0
+a[4] => digit_multiply_out[4].digit_multiply_end[4].digit_multi.IN0
+b[0] => digit_multiply_out[0].digit_multiply_end[0].digit_multi.IN1
+b[0] => digit_multiply_out[1].digit_multiply_end[0].digit_multi.IN1
+b[0] => digit_multiply_out[2].digit_multiply_end[0].digit_multi.IN1
+b[0] => digit_multiply_out[3].digit_multiply_end[0].digit_multi.IN1
+b[0] => digit_multiply_out[4].digit_multiply_end[0].digit_multi.IN1
+b[1] => digit_multiply_out[0].digit_multiply_end[1].digit_multi.IN1
+b[1] => digit_multiply_out[1].digit_multiply_end[1].digit_multi.IN1
+b[1] => digit_multiply_out[2].digit_multiply_end[1].digit_multi.IN1
+b[1] => digit_multiply_out[3].digit_multiply_end[1].digit_multi.IN1
+b[1] => digit_multiply_out[4].digit_multiply_end[1].digit_multi.IN1
+b[2] => digit_multiply_out[0].digit_multiply_end[2].digit_multi.IN1
+b[2] => digit_multiply_out[1].digit_multiply_end[2].digit_multi.IN1
+b[2] => digit_multiply_out[2].digit_multiply_end[2].digit_multi.IN1
+b[2] => digit_multiply_out[3].digit_multiply_end[2].digit_multi.IN1
+b[2] => digit_multiply_out[4].digit_multiply_end[2].digit_multi.IN1
+b[3] => digit_multiply_out[0].digit_multiply_end[3].digit_multi.IN1
+b[3] => digit_multiply_out[1].digit_multiply_end[3].digit_multi.IN1
+b[3] => digit_multiply_out[2].digit_multiply_end[3].digit_multi.IN1
+b[3] => digit_multiply_out[3].digit_multiply_end[3].digit_multi.IN1
+b[3] => digit_multiply_out[4].digit_multiply_end[3].digit_multi.IN1
+b[4] => digit_multiply_out[0].digit_multiply_end[4].digit_multi.IN1
+b[4] => digit_multiply_out[1].digit_multiply_end[4].digit_multi.IN1
+b[4] => digit_multiply_out[2].digit_multiply_end[4].digit_multi.IN1
+b[4] => digit_multiply_out[3].digit_multiply_end[4].digit_multi.IN1
+b[4] => digit_multiply_out[4].digit_multiply_end[4].digit_multi.IN1
+res[0] << digit_multiply_out[0].digit_multiply_end[0].digit_multi.DB_MAX_OUTPUT_PORT_TYPE
+res[1] << ha:ha_0.port2
+res[2] << ha:ha_2.port2
+res[3] << ha:ha_6.port2
+res[4] << ha:ha_11.port2
+res[5] << fa:fa_9.port3
+res[6] << fa:fa_10.port3
+res[7] << fa:fa_11.port3
+res[8] << fa:fa_12.port3
+res[9] << fa:fa_13.port3
+
+
+|multi|ha:ha_0
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_0
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_1
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_2
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_3
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_4
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_1
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_2
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_5
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_6
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_7
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_3
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_4
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_5
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_6
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_8
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_7
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_8
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_9
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_10
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|ha:ha_11
+a => xor_ha.IN0
+a => and_ha.IN0
+b => xor_ha.IN1
+b => and_ha.IN1
+sum <= xor_ha.DB_MAX_OUTPUT_PORT_TYPE
+cout <= and_ha.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_9
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_10
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_11
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_12
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multi|fa:fa_13
+a => xor_1.IN0
+a => and_1.IN0
+b => xor_1.IN1
+b => and_1.IN1
+cin => xor_2.IN1
+cin => and_2.IN1
+res <= xor_2.DB_MAX_OUTPUT_PORT_TYPE
+cout <= or_1.DB_MAX_OUTPUT_PORT_TYPE
+
+

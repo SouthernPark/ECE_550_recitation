@@ -44,6 +44,7 @@ module multi_tb();
 
     task checkMulti;
         begin
+				//1
             @(negedge clock);
             assign a  = 5'd20;
             assign b= 5'd20;
@@ -54,13 +55,14 @@ module multi_tb();
                 errors = errors + 1;
             end
 				
+				//2
 				@(negedge clock);
             assign a  = 5'd31;
             assign b= 5'd31;
 
             @(negedge clock);
             if(res !== 10'd961) begin
-                $display("**Error in AND (test 1); expected: %h, actual: %h", 10'd963, res);
+                $display("**Error in AND (test 1); expected: %h, actual: %h", 10'd961, res);
                 errors = errors + 1;
             end
 				

@@ -1,0 +1,76 @@
+# Reading E:/Quartus/altera_lite/16.0/modelsim_ase/tcl/vsim/pref.tcl
+# ERROR: No extended dataflow license exists
+# do multi_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim ALTERA vmap 10.4d Lib Mapping Utility 2015.12 Dec 30 2015
+# vmap work rtl_work 
+# Copying E:/Quartus/altera_lite/16.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3 {C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/multi.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:45:22 on Sep 15,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3" C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/multi.v 
+# -- Compiling module multi
+# 
+# Top level modules:
+# 	multi
+# End time: 16:45:22 on Sep 15,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3 {C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/ha.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:45:22 on Sep 15,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3" C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/ha.v 
+# -- Compiling module ha
+# 
+# Top level modules:
+# 	ha
+# End time: 16:45:22 on Sep 15,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3 {C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/fa.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:45:22 on Sep 15,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3" C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/fa.v 
+# -- Compiling module fa
+# 
+# Top level modules:
+# 	fa
+# End time: 16:45:22 on Sep 15,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3 {C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/multi_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.4d Compiler 2015.12 Dec 30 2015
+# Start time: 16:45:22 on Sep 15,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3" C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/multi_tb.v 
+# -- Compiling module multi_tb
+# 
+# Top level modules:
+# 	multi_tb
+# End time: 16:45:22 on Sep 15,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  multi_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=""+acc"" multi_tb 
+# Start time: 16:45:22 on Sep 15,2021
+# Loading work.multi_tb
+# Loading work.multi
+# Loading work.ha
+# Loading work.fa
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+#                    0 << Starting the Simulation >>
+# The simulation completed without errors
+# ** Note: $stop    : C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/multi_tb.v(36)
+#    Time: 200 ns  Iteration: 1  Instance: /multi_tb
+# Break in Module multi_tb at C:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation3/multi_tb.v line 36
+# End time: 16:47:21 on Sep 15,2021, Elapsed time: 0:01:59
+# Errors: 0, Warnings: 0
