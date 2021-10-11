@@ -1,0 +1,5 @@
+module twobitadder(
+input [1:0]a,b,
+input cin,
+output [0:6] HEX1,HEX0
+);

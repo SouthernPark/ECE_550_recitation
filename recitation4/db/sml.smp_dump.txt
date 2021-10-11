@@ -1,0 +1,11 @@
+
+State Machine - |sml|stateMealy_reg
+Name stateMealy_reg.seven stateMealy_reg.six stateMealy_reg.five stateMealy_reg.four stateMealy_reg.three stateMealy_reg.two stateMealy_reg.one stateMealy_reg.zero 
+stateMealy_reg.zero 0 0 0 0 0 0 0 0 
+stateMealy_reg.one 0 0 0 0 0 0 1 1 
+stateMealy_reg.two 0 0 0 0 0 1 0 1 
+stateMealy_reg.three 0 0 0 0 1 0 0 1 
+stateMealy_reg.four 0 0 0 1 0 0 0 1 
+stateMealy_reg.five 0 0 1 0 0 0 0 1 
+stateMealy_reg.six 0 1 0 0 0 0 0 1 
+stateMealy_reg.seven 1 0 0 0 0 0 0 1 

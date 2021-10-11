@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Sep 22 17:50:47 2021
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+Revision Name : sml
+Top-level Entity Name : sml
+Family : Cyclone IV E
+Total logic elements : 6
+    Total combinational functions : 6
+    Dedicated logic registers : 5
+Total registers : 5
+Total pins : 3
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

@@ -1,0 +1,319 @@
+// Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, the Altera Quartus Prime License Agreement,
+// the Altera MegaCore Function License Agreement, or other 
+// applicable license agreement, including, without limitation, 
+// that your use is for the sole purpose of programming logic 
+// devices manufactured by Altera and sold by Altera or its 
+// authorized distributors.  Please refer to the applicable 
+// agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition"
+
+// DATE "09/22/2021 17:51:20"
+
+// 
+// Device: Altera EP4CE115F29C7 Package FBGA780
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module sml (
+	clk,
+	w,
+	out);
+input 	clk;
+input 	w;
+output 	out;
+
+// Design Ports Information
+// out	=>  Location: PIN_B4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// w	=>  Location: PIN_A4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \out~output_o ;
+wire \clk~input_o ;
+wire \clk~inputclkctrl_outclk ;
+wire \w~input_o ;
+wire \stateMealy_reg.zero~0_combout ;
+wire \stateMealy_reg.zero~q ;
+wire \Selector1~0_combout ;
+wire \stateMealy_reg.one~q ;
+wire \Selector2~0_combout ;
+wire \stateMealy_reg.two~q ;
+wire \Selector3~0_combout ;
+wire \stateMealy_reg.three~q ;
+wire \Selector4~0_combout ;
+wire \stateMealy_reg.four~q ;
+wire \out~0_combout ;
+
+
+// Location: IOOBUF_X7_Y73_N23
+cycloneive_io_obuf \out~output (
+	.i(\out~0_combout ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\out~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \out~output .bus_hold = "false";
+defparam \out~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y36_N8
+cycloneive_io_ibuf \clk~input (
+	.i(clk),
+	.ibar(gnd),
+	.o(\clk~input_o ));
+// synopsys translate_off
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G2
+cycloneive_clkctrl \clk~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\clk~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\clk~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \clk~inputclkctrl .clock_type = "global clock";
+defparam \clk~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: IOIBUF_X7_Y73_N15
+cycloneive_io_ibuf \w~input (
+	.i(w),
+	.ibar(gnd),
+	.o(\w~input_o ));
+// synopsys translate_off
+defparam \w~input .bus_hold = "false";
+defparam \w~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y72_N10
+cycloneive_lcell_comb \stateMealy_reg.zero~0 (
+// Equation(s):
+// \stateMealy_reg.zero~0_combout  = (\w~input_o  & ((!\stateMealy_reg.four~q ))) # (!\w~input_o  & (\stateMealy_reg.zero~q ))
+
+	.dataa(gnd),
+	.datab(\w~input_o ),
+	.datac(\stateMealy_reg.zero~q ),
+	.datad(\stateMealy_reg.four~q ),
+	.cin(gnd),
+	.combout(\stateMealy_reg.zero~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \stateMealy_reg.zero~0 .lut_mask = 16'h30FC;
+defparam \stateMealy_reg.zero~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X7_Y72_N11
+dffeas \stateMealy_reg.zero (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\stateMealy_reg.zero~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\stateMealy_reg.zero~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \stateMealy_reg.zero .is_wysiwyg = "true";
+defparam \stateMealy_reg.zero .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y72_N28
+cycloneive_lcell_comb \Selector1~0 (
+// Equation(s):
+// \Selector1~0_combout  = (\w~input_o  & ((!\stateMealy_reg.zero~q ))) # (!\w~input_o  & (\stateMealy_reg.one~q  & \stateMealy_reg.zero~q ))
+
+	.dataa(gnd),
+	.datab(\w~input_o ),
+	.datac(\stateMealy_reg.one~q ),
+	.datad(\stateMealy_reg.zero~q ),
+	.cin(gnd),
+	.combout(\Selector1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector1~0 .lut_mask = 16'h30CC;
+defparam \Selector1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X7_Y72_N29
+dffeas \stateMealy_reg.one (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\Selector1~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\stateMealy_reg.one~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \stateMealy_reg.one .is_wysiwyg = "true";
+defparam \stateMealy_reg.one .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y72_N18
+cycloneive_lcell_comb \Selector2~0 (
+// Equation(s):
+// \Selector2~0_combout  = (\w~input_o  & ((\stateMealy_reg.one~q ))) # (!\w~input_o  & (\stateMealy_reg.two~q  & !\stateMealy_reg.one~q ))
+
+	.dataa(gnd),
+	.datab(\w~input_o ),
+	.datac(\stateMealy_reg.two~q ),
+	.datad(\stateMealy_reg.one~q ),
+	.cin(gnd),
+	.combout(\Selector2~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector2~0 .lut_mask = 16'hCC30;
+defparam \Selector2~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X7_Y72_N19
+dffeas \stateMealy_reg.two (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\Selector2~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\stateMealy_reg.two~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \stateMealy_reg.two .is_wysiwyg = "true";
+defparam \stateMealy_reg.two .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y72_N12
+cycloneive_lcell_comb \Selector3~0 (
+// Equation(s):
+// \Selector3~0_combout  = (\w~input_o  & ((\stateMealy_reg.two~q ))) # (!\w~input_o  & (\stateMealy_reg.three~q  & !\stateMealy_reg.two~q ))
+
+	.dataa(gnd),
+	.datab(\w~input_o ),
+	.datac(\stateMealy_reg.three~q ),
+	.datad(\stateMealy_reg.two~q ),
+	.cin(gnd),
+	.combout(\Selector3~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector3~0 .lut_mask = 16'hCC30;
+defparam \Selector3~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X7_Y72_N13
+dffeas \stateMealy_reg.three (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\Selector3~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\stateMealy_reg.three~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \stateMealy_reg.three .is_wysiwyg = "true";
+defparam \stateMealy_reg.three .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y72_N16
+cycloneive_lcell_comb \Selector4~0 (
+// Equation(s):
+// \Selector4~0_combout  = (\w~input_o  & ((\stateMealy_reg.three~q ))) # (!\w~input_o  & (\stateMealy_reg.four~q  & !\stateMealy_reg.three~q ))
+
+	.dataa(gnd),
+	.datab(\w~input_o ),
+	.datac(\stateMealy_reg.four~q ),
+	.datad(\stateMealy_reg.three~q ),
+	.cin(gnd),
+	.combout(\Selector4~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector4~0 .lut_mask = 16'hCC30;
+defparam \Selector4~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X7_Y72_N17
+dffeas \stateMealy_reg.four (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\Selector4~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\stateMealy_reg.four~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \stateMealy_reg.four .is_wysiwyg = "true";
+defparam \stateMealy_reg.four .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X7_Y72_N2
+cycloneive_lcell_comb \out~0 (
+// Equation(s):
+// \out~0_combout  = (\stateMealy_reg.four~q  & \w~input_o )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\stateMealy_reg.four~q ),
+	.datad(\w~input_o ),
+	.cin(gnd),
+	.combout(\out~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \out~0 .lut_mask = 16'hF000;
+defparam \out~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+assign out = \out~output_o ;
+
+endmodule

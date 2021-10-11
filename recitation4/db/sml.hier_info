@@ -1,0 +1,19 @@
+|sml
+clk => stateMealy_reg~1.DATAIN
+w => stateMealy_next.OUTPUTSELECT
+w => stateMealy_next.OUTPUTSELECT
+w => stateMealy_next.OUTPUTSELECT
+w => stateMealy_next.OUTPUTSELECT
+w => stateMealy_next.OUTPUTSELECT
+w => stateMealy_next.five.OUTPUTSELECT
+w => stateMealy_next.six.OUTPUTSELECT
+w => stateMealy_next.seven.OUTPUTSELECT
+w => stateMealy_next.OUTPUTSELECT
+w => stateMealy_next.OUTPUTSELECT
+w => stateMealy_next.OUTPUTSELECT
+w => stateMealy_next.OUTPUTSELECT
+w => stateMealy_next.OUTPUTSELECT
+w => out.DATAB
+out <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
