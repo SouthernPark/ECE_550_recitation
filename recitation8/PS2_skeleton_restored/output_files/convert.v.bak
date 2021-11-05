@@ -1,0 +1,4 @@
+module convert(adrr, x, y);
+	input wire[18:0] addr;
+	output wire [9:0] x, y;
+endmodule

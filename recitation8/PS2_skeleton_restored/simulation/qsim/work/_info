@@ -1,0 +1,50 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/SouthernPark/git_projects/ECE_550_recitation/recitation8/PS2_skeleton_restored/simulation/qsim
+vconvert
+Z1 !s110 1636129609
+!i10b 1
+!s100 YL?kgTeDcF^2h8WcCk?2P3
+IiAbC>[SH2YKY3[22]:o:]3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1636129609
+8skeleton.vo
+Fskeleton.vo
+L0 32
+Z3 OV;L;10.4d;61
+r1
+!s85 0
+31
+Z4 !s108 1636129609.000000
+!s107 skeleton.vo|
+!s90 -work|work|skeleton.vo|
+!i113 1
+Z5 o-work work
+vconvert_vlg_vec_tst
+R1
+!i10b 1
+!s100 ][Aj??oInzMP9L=<fo8m@1
+ISVRYAIZR4I>0VzGjj>Q<k0
+R2
+R0
+w1636129608
+8convert_test.vwf.vt
+Fconvert_test.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+R4
+!s107 convert_test.vwf.vt|
+!s90 -work|work|convert_test.vwf.vt|
+!i113 1
+R5
